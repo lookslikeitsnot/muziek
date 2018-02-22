@@ -7,6 +7,9 @@ http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/persistence/persistence_2
 		<non-jta-data-source>
 			java:/comp/env/jdbc/muziek
 		</non-jta-data-source>
+		<class>be.vdab.entities.Album</class>
+		<class>be.vdab.entities.Artiest</class>
+		<class>be.vdab.valueobjects.Track</class>
 		<properties>
 			<property name='hibernate.show_sql' value='true' />
 			<property name='hibernate.format_sql' value='true' />

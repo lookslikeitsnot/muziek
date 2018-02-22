@@ -22,10 +22,6 @@ public class Artiest implements Serializable {
 		return naam;
 	}
 
-	public void setNaam(String naam) {
-		this.naam = naam;
-	}
-
 	public long getId() {
 		return id;
 	}
@@ -53,12 +49,5 @@ public class Artiest implements Serializable {
 		} else if (!naam.equals(other.naam))
 			return false;
 		return true;
-	}
-
-	public Artiest(String naam) {
-		this.naam = naam;
-	}
-
-	public Artiest() {
 	}
 }

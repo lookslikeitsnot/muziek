@@ -1,6 +1,7 @@
 package be.vdab.entities;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.Set;
 
@@ -36,16 +37,8 @@ public class Album implements Serializable {
 		return artiest;
 	}
 
-	public void setArtiest(Artiest artiest) {
-		this.artiest = artiest;
-	}
-
 	public String getNaam() {
 		return naam;
-	}
-
-	public void setNaam(String naam) {
-		this.naam = naam;
 	}
 
 	public long getId() {
@@ -55,9 +48,11 @@ public class Album implements Serializable {
 	public Set<Track> getTracks() {
 		return Collections.unmodifiableSet(tracks);
 	}
-
-	public void setTracks(Set<Track> tracks) {
-		this.tracks = tracks;
+	
+	public BigDecimal getAlbumTijd() {
+		return tracks.stream()
+				.map(track -> track.getTijd())
+				.reduce(BigDecimal.ZERO, BigDecimal::add);
 	}
 
 	@Override
@@ -89,13 +84,5 @@ public class Album implements Serializable {
 		} else if (!naam.equals(other.naam))
 			return false;
 		return true;
-	}
-
-	public Album(Artiest artiest, String naam) {
-		this.artiest = artiest;
-		this.naam = naam;
-	}
-
-	public Album() {
 	}
 }
