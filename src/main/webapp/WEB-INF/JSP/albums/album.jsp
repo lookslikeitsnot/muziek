@@ -25,6 +25,6 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<p>Totale duurtijd van het album: ${albumtijd}</p>
+	<p>Totale duurtijd van het album: ${album.albumTijd}</p>
 </body>
 </html>

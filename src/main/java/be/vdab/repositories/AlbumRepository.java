@@ -9,6 +9,8 @@ public class AlbumRepository extends AbstractRepository{
 	public List<Album> findAll(){
 		return getEntityManager()
 				.createNamedQuery("Album.findAll", Album.class)
+				.setHint("javax.persistence.loadgraph",
+						getEntityManager().createEntityGraph(Album.MET_ARTIEST))
 				.getResultList();
 	}
 	

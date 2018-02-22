@@ -20,7 +20,6 @@ public class IndexServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("Getting the request");
 		request.setAttribute("albums", albumService.findAll());
 		request.getRequestDispatcher(VIEW).forward(request, response);
 	}

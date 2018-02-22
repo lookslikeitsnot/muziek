@@ -14,14 +14,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedAttributeNode;
+import javax.persistence.NamedEntityGraph;
 import javax.persistence.Table;
 
 import be.vdab.valueobjects.Track;
 
 @Entity
 @Table(name = "albums")
+@NamedEntityGraph(name = Album.MET_ARTIEST,
+attributeNodes = @NamedAttributeNode("artiest") )
 public class Album implements Serializable {
 	private static final long serialVersionUID = 1L;
+	public static final String MET_ARTIEST = "Album.metArtiest";
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;

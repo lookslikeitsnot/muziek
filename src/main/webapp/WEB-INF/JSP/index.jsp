@@ -16,7 +16,7 @@
 			<c:url value='/albums/album.htm' var='url'>
 				<c:param name='id' value='${album.id}' />
 			</c:url>
-			<li><a href='${url}'>${album.naam}</a></li>
+			<li><a href='${url}'>${album.naam}</a> - ${album.artiest.naam}</li>
 		</c:forEach>
 	</ul>
 </body>

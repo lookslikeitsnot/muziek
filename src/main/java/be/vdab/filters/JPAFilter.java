@@ -25,7 +25,6 @@ public class JPAFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws ServletException, IOException {
-		System.out.println("Gets to the filter");
 		entityManagers.set(entityManagerFactory.createEntityManager());
 		try {
 			request.setCharacterEncoding("UTF-8");
